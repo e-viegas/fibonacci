@@ -5,4 +5,4 @@ jobs:
       - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
       - run: cd ..
-      - run: mvn build
+      - run: build
