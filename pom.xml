@@ -25,6 +25,6 @@
   
   <modules>
     <module>fibonacci-core</module>
-    <module>fibonacci-view</module>
+    <module>fibonacci-plugin</module>
   </modules>
 </project>

@@ -7,17 +7,14 @@
     <artifactId>fibonacci</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  
   <groupId>eu.ensg.eviegas.plugins</groupId>
   <artifactId>fibonacci-core</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>fibonacci-core</name>
   <url>http://maven.apache.org</url>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,6 +23,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-  <description>A module to calculate the Fibonacci sequence</description>
 </project>

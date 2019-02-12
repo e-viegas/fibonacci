@@ -5,12 +5,17 @@ import java.util.List;
 
 /**
  * Class to compute the Fibonacci sequence
+ * This class is based on the design pattern "SINGLETON".
+ * There are two methods :
+ * 		Fibonacci.get() : to get the unique instance of this class
+ * 		this.run(int n) : to compute the nth term of the Fibonacci sequence
  * @author Erwan Viegas
  *
  */
 public class Fibonacci {
 	/**
-	 * List of results previously computed and stacked in memory
+	 * List of results previously computed and stacked in memory.
+	 * 
 	 */
 	private List<Long> results;
 	
@@ -34,11 +39,11 @@ public class Fibonacci {
 	 * @return Fibonacci instance with the previous results
 	 */
 	public static Fibonacci get() {
-		if (INSTANCE == null) {
-			INSTANCE = new Fibonacci();
+		if (Fibonacci.INSTANCE == null) {
+			Fibonacci.INSTANCE = new Fibonacci();
 		}
 		
-		return INSTANCE;
+		return Fibonacci.INSTANCE;
 	}
 	
 	/**
@@ -51,19 +56,19 @@ public class Fibonacci {
 		if (n < 0) {
 			// Negative case
 			return 0L;
-		} else if (n < this.results.size()) {
-			// Results previously computed
-			return this.results.get(n);
 		} else {
-			// Extend the results list
-			for (int k = this.results.size(); k <= n; k ++) {
-				// F(n) = F(n - 1) + F(n - 2)
-				this.results.add(
-						this.results.get(k - 1) + this.results.get(k - 2)
-				);
+			// Positive case
+			if (n >= this.results.size()) {
+				// Not previously computed ==> Extend the results list
+				for (int k = this.results.size(); k <= n; k ++) {
+					// F(n) = F(n - 1) + F(n - 2)
+					this.results.add(
+							this.results.get(k - 1) + this.results.get(k - 2)
+					);
+				}
 			}
 			
 			return this.results.get(n);
-		}
+		} 
 	}
 }
