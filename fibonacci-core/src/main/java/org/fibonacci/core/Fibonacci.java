@@ -49,18 +49,18 @@ public class Fibonacci {
 	/**
 	 * Compute the Fibonacci sequence for the nth term
 	 * The list 'results' is updated
-	 * @param n Term index to calculate F(n)
+	 * @param rank Term index to calculate F(n)
 	 * @return 0 if n < 0 || F(n) else
 	 */
-	public Long run(int n) {
-		if (n < 0) {
+	public Long run(int rank) {
+		if (rank < 0) {
 			// Negative case
 			return 0L;
 		} else {
 			// Positive case
-			if (n >= this.results.size()) {
+			if (rank >= this.results.size()) {
 				// Not previously computed ==> Extend the results list
-				for (int k = this.results.size(); k <= n; k ++) {
+				for (int k = this.results.size(); k <= rank; k ++) {
 					// F(n) = F(n - 1) + F(n - 2)
 					this.results.add(
 							this.results.get(k - 1) + this.results.get(k - 2)
@@ -68,7 +68,7 @@ public class Fibonacci {
 				}
 			}
 			
-			return this.results.get(n);
+			return this.results.get(rank);
 		} 
 	}
 }
