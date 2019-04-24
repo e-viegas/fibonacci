@@ -43,7 +43,7 @@ public class FibonacciTest extends TestCase{
      */
     public void testRun(){
     	Fibonacci fb = Fibonacci.get();
-    	Assert.assertEquals(0, fb.run(-1), FibonacciTest.EPSILON);
+    	Assert.assertEquals(999, fb.run(-1), FibonacciTest.EPSILON);
     	Assert.assertEquals(0, fb.run(0), FibonacciTest.EPSILON);
     	Assert.assertEquals(1, fb.run(1), FibonacciTest.EPSILON);
     	Assert.assertEquals(2, fb.run(3), FibonacciTest.EPSILON);
